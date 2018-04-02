@@ -11,4 +11,7 @@ class CodeclanStudent
     return @student_name
   end
 
+  def student_cohort
+    return @student_cohort
+  end
 end

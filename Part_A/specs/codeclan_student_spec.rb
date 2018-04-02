@@ -24,13 +24,10 @@ class TestCodeclanStudent < MiniTest::Test
     assert_equal('Papa Lazaru', student_profile.student_name)
 
   end
-  # def test_cohort()
-  #
-end
 
-# bank_account_spec.rb
-# class TestBankAccount < MiniTest::Test
-#   def test_account_name
-#     bank_account = BankAccount.new()
-#   end
-# end
+  def test_student_cohort
+    student_profile = CodeclanStudent.new("Papa Lazaru", 6)
+    assert_equal(6, student_profile.student_cohort)
+  end
+
+end
