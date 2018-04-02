@@ -19,4 +19,8 @@ class CodeclanStudent
     @student_name = name
   end
 
+  def set_student_cohort(cohort)
+    @student_cohort = cohort
+  end
+
 end
