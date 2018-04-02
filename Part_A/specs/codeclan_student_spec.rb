@@ -30,4 +30,10 @@ class TestCodeclanStudent < MiniTest::Test
     assert_equal(6, student_profile.student_cohort)
   end
 
+  def test_set_student_name
+  student_profile = CodeclanStudent.new('Papa Lazaru', 6)
+  student_profile.set_student_name('Tubbs')
+  assert_equal('Tubbs', student_profile.student_name)
+  end
+
 end
