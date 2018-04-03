@@ -18,8 +18,10 @@ require_relative('../codeclan_student.rb')
 
 class TestCodeclanStudent < MiniTest::Test
 
+  def setup()
+  @student_profile = CodeclanStudent.new("Papa Lazaru", 6)
+end
   def test_student_name
-
     student_profile = CodeclanStudent.new("Papa Lazaru", 6)
     assert_equal('Papa Lazaru', student_profile.student_name)
 
@@ -31,14 +33,24 @@ class TestCodeclanStudent < MiniTest::Test
   end
 
   def test_set_student_name
-  student_profile = CodeclanStudent.new('Papa Lazaru', 6)
-  student_profile.set_student_name('Tubbs')
-  assert_equal('Tubbs', student_profile.student_name)
+    student_profile = CodeclanStudent.new("Papa Lazaru", 6)
+    student_profile.set_student_name("Tubbs")
+    assert_equal("Tubbs", student_profile.student_name)
   end
 
   def test_set_student_cohort
     student_profile = CodeclanStudent.new("Papa Lazaru", 6)
     student_profile.set_student_cohort(100)
     assert_equal(100, student_profile.student_cohort)
-  end 
+  end
+
+  def test_student_speaking
+    @student_profile.student_speaking
+    assert_equal("I can talk!", @student_profile.student_speaking)
+  end
+
+
+  # def test_student_language
+  #   student
+
 end
