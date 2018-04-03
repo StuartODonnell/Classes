@@ -20,37 +20,33 @@ class TestCodeclanStudent < MiniTest::Test
 
   def setup()
   @student_profile = CodeclanStudent.new("Papa Lazaru", 6)
-end
-  def test_student_name
-    student_profile = CodeclanStudent.new("Papa Lazaru", 6)
-    assert_equal('Papa Lazaru', student_profile.student_name)
+  end
 
+  def test_student_name
+    assert_equal('Papa Lazaru', @student_profile.student_name)
   end
 
   def test_student_cohort
-    student_profile = CodeclanStudent.new("Papa Lazaru", 6)
-    assert_equal(6, student_profile.student_cohort)
+    assert_equal(6, @student_profile.student_cohort)
   end
 
   def test_set_student_name
-    student_profile = CodeclanStudent.new("Papa Lazaru", 6)
-    student_profile.set_student_name("Tubbs")
-    assert_equal("Tubbs", student_profile.student_name)
+    @student_profile.set_student_name("Tubbs")
+    assert_equal("Tubbs", @student_profile.student_name)
   end
 
   def test_set_student_cohort
-    student_profile = CodeclanStudent.new("Papa Lazaru", 6)
-    student_profile.set_student_cohort(100)
-    assert_equal(100, student_profile.student_cohort)
+    @student_profile.set_student_cohort(100)
+    assert_equal(100, @student_profile.student_cohort)
   end
 
   def test_student_speaking
-    @student_profile.student_speaking
-    assert_equal("I can talk!", @student_profile.student_speaking)
+    speech = @student_profile.student_speaking
+    assert_equal("I can talk!", speech)
   end
 
-
-  # def test_student_language
-  #   student
-
+  def test_favourite_language
+  favourite_language = @student_profile.favourite_language("ruby")
+  assert_equal("I love ruby", favourite_language)
+  end
 end
